@@ -1,0 +1,144 @@
+:root {
+    --bg: #0A1120;
+    --gold: #D4AF37;
+    --ink: #F7F4EC;
+    --muted: #a9afbe;
+    --line: #26385A;
+
+    --serif: 'Fraunces', Georgia, serif;
+    --body-serif: 'Spectral', Georgia, serif;
+    --sans: 'Archivo', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --display: 'Playfair Display SC', 'Playfair Display', Georgia, serif;
+}
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow-x: hidden;
+}
+
+
+/* HEADER */
+
+.home-header {
+    font-family: var(--sans);
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
+    min-height: 87px;
+    background: rgba(10, 17, 32, .88);
+    backdrop-filter: blur(1px);
+    box-shadow: 0 1px 2px var(--gold);
+}
+
+
+header > nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 150px;
+    gap: 14px;
+}
+
+
+/* LOGO */
+
+.mainLogo img {
+    display: block;
+    width: 55px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+}
+
+
+/* NAVIGATION TEXT */
+
+
+.nav-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1;
+}
+
+
+.nav-subTitle {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .28em;
+    color: var(--gold);
+}
+
+
+.nav-group {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: var(--muted);
+}
+
+
+/* NAVIGATION LINKS */
+
+nav ul {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+
+nav ul a {
+    position: relative;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .16em;
+}
+
+
+nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: var(--gold);
+    transition: transform 0.3s ease;
+}
+
+
+nav ul a:hover::after,
+nav ul a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+nav ul a:hover,
+nav ul a.active {
+    color: var(--gold);
+}
+
+/* MEMBERS SECTION */

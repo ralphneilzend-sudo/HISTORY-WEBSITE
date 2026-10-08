@@ -1,0 +1,238 @@
+:root {
+    --bg: #0A1120;
+    --gold: #D4AF37;
+    --ink: #F7F4EC;
+    --muted: #a9afbe;
+    --line: #26385A;
+    --headerText: #f8f5eebf;
+
+    --serif: 'Fraunces', Georgia, serif;
+    --body-serif: 'Spectral', Georgia, serif;
+    --sans: 'Archivo', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --display: 'Playfair Display SC', 'Playfair Display', Georgia, serif;
+}
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow-x: hidden;
+}
+
+
+/* HEADER */
+
+.home-header {
+    font-family: var(--sans);
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
+    min-height: 87px;
+    background: rgba(10, 17, 32, .70);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 1px 2px var(--gold);
+}
+
+
+header > nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 150px;
+    gap: 14px;
+}
+
+
+/* LOGO */
+
+.mainLogo img {
+    display: block;
+    width: 55px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+}
+
+
+/* NAVIGATION TEXT */
+
+
+.nav-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1;
+}
+
+
+.nav-subTitle {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .28em;
+    color: var(--gold);
+}
+
+
+.nav-group {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: var(--muted);
+}
+
+
+/* NAVIGATION LINKS */
+
+nav ul {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+
+nav ul a {
+    position: relative;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .16em;
+}
+
+
+nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: var(--gold);
+    transition: transform 0.3s ease;
+}
+
+
+nav ul a:hover::after,
+nav ul a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+nav ul a:hover,
+nav ul a.active {
+    color: var(--gold);
+}
+
+
+/* HERO */
+
+.hero {
+    width: 100%;
+    min-height: 100dvh;
+    padding: 140px 150px 80px;
+    background-image:
+        linear-gradient(rgba(5, 12, 25, .80)),
+        url("../Images/Home.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--gold);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .24em;
+    margin-bottom: 25px;
+}
+
+
+/* GOLD HAIRLINE */
+
+.rule {
+    width: 50px;
+    height: 1px;
+    flex-shrink: 0;
+    background: linear-gradient(to right, rgba(212, 175, 55, 0.7), rgba(212, 175, 55, 0.08));
+}
+
+
+/* MAIN TITLE */
+
+.hometitle {
+    margin-bottom: 36px;
+    font-family: var(--display);
+    font-size: clamp(10px, 8vw, 110px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+}
+
+.region2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 100;
+    color: var(--gold);
+}
+
+
+.subtitle {
+    font-family: var(--body-serif);
+    font-style: italic;
+    font-size: 22px;
+    color: rgb(219, 232, 229);
+    margin-bottom: 22px;
+}
+
+
+.description {
+    max-width: 580px;
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: #f8f5eebf;
+}
+
+
+
+
+
+
+footer {
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg);
+    color: rgb(107, 106, 106);
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+.dot {
+    font-weight: 1000;
+    font-size: 11px;
+}
